@@ -13,7 +13,7 @@
       <% if current_user.id == @post.user_id %>
       <%= link_to '編集', edit_post_path(@post.id), method: :get, class: "post-blue-btn" %>
       <p class='or-text'>or</p>
-      <%= link_to '削除', root_path, method: :delete, class:'post-destroy' %>
+      <%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %>
       <% else %>
       <% end %>
     <% end %>
