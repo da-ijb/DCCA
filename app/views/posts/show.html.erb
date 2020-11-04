@@ -1,2 +1,45 @@
-<h1>Protections#show</h1>
-<p>Find me in app/views/protections/show.html.erb</p>
+<%= render "shared/header" %>
+
+<div class="post-show">
+  <div class="post-box">
+    <h2 class="name">
+      <%= @post.name %>
+    </h2>
+    <div class='post-img-content'>
+      <%= image_tag @post.image ,class:"item-box-img" %>
+    </div>
+
+    <% if user_signed_in? %>
+      <% if current_user.id == @post.user_id %>
+      <%= link_to '編集', root_path, method: :get, class: "post-blue-btn" %>
+      <p class='or-text'>or</p>
+      <%= link_to '削除', root_path, method: :delete, class:'post-destroy' %>
+      <% else %>
+      <% end %>
+    <% end %>
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-post">紹介者</th>
+          <td class="detail-value"><%= @post.user.nickname %>さん</td>
+        </tr>
+        <tr>
+          <th class="detail-post">種別</th>
+          <td class="detail-value"><%= @post.kind.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">性別</th>
+          <td class="detail-value"><%= @post.gender.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">説明</th>
+          <td class="detail-value"><%= @post.description%></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<%= render "shared/footer" %>
