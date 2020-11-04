@@ -28,6 +28,7 @@
 | ------------------- | ---------- | ------------------------------ |
 | name                | string     | null: false                    |
 | kind_id             | integer    | null: false                    |
+| gender_id           | integer    | null: false                    |
 | description         | text       | null: false                    |
 | user                | references | null: false, foreign_key: true |
 

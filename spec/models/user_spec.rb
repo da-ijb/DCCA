@@ -113,7 +113,7 @@ describe User do
       expect(@user.errors.full_messages).to include("Prefecture must be other than 1")     
     end  
 
-    it "商品の説明が必須であること" do
+    it "自己紹介が必須であること" do
       @user.introduction = nil
       @user.valid?
       expect(@user.errors.full_messages).to include("Introduction can't be blank")     

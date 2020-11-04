@@ -1,0 +1,69 @@
+<div class="posts-prelusion-contents">
+  <header class="posts-prelusion-header">
+    <%= link_to image_tag('test_logo.webp' , size: '50x50'), "/" %>
+
+  </header>
+  <div class="posts-prelusion-main">
+    <h2 class="posts-prelusion-title">保護犬保護猫の情報を入力</h2>
+    <%= form_with model: @post, url: posts_path, local: true do |f| %>
+
+    
+    <%= render 'shared/error_messages', model: f.object %>
+    
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        保護犬保護猫紹介画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"post-image" %>
+      </div>
+    </div>
+    <div class="new-posts">
+      <div class="weight-bold-text">
+        名前
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"名前（必須 40文字まで)", maxlength:"40" %>
+      <div class="posts-explain">
+        <div class="weight-bold-text">
+          説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :description, class:"posts-text", id:"post-info", placeholder:"説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+
+    <div class="posts-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          種別
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:kind_id, Kind.all, :id, :name, {}, {class:"select-box", id:"post-kind"}) %>
+        <div class="weight-bold-text">
+          性別
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"post-gender"}) %>
+      </div>
+    </div>
+    <div class="prelusion-btn-contents">
+      <%= f.submit "紹介する" ,class:"prelusion-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  </div>
+  <% end %>
+
+  <footer class="posts-prelusion-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">DCCA利用規約</a></li>
+    </ul>
+    <%= link_to image_tag('test_logo.webp' , size: '50x50'), "/" %>
+  </footer>
+</div>
