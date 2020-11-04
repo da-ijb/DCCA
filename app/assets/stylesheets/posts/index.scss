@@ -38,87 +38,55 @@ a {
   padding: 10vh 0;
 }
 
-// .post-contents>.title {
-//   font-size: 5vh;
-//   line-height: 1.4;
-//   font-weight: bold;
-// }
+.post-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
 
-// .post-contents>.subtitle {
-//   font-size: 3vh;
-//   margin: 1vh 0;
-//   text-decoration: none;
-//   color: #3ccace;
-//   font-weight: bold;
-// }
+.post-contents>.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color: #3ccace;
+  font-weight: bold;
+}
 
-// .post-lists {
-//   width: 100vw;
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-// }
+.post-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-// .post-lists>.list {
-//   width: 37vh;
-//   padding: 1vw;
-//   background-color: #FFF;
-// }
+.post-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
 
+.post-img-content {
+  position: relative;
+}
 
-// .post-img-content {
-//   position: relative;
-// }
+.post-img {
+  width: 33vh;
+  height: 33vh;
+}
 
-// .post-img {
-//   width: 33vh;
-//   height: 33vh;
-// }
+.post-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
 
-// .sold-out {
-//   position: absolute;
-//   top: 40%;
-//   width: 100%;
-//   text-align: center;
-//   background-color: crimson;
-//   transform: skewY(-10deg);
-// }
+.post-name {
+  font-size: 2.5vh;
+}
 
-// .sold-out>span {
-//   color: #FFF;
-//   font-size: 45px;
-//   font: bold;
-// }
+.post-nickname {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+}
 
-
-// .post-info {
-//   background-color: #FFF;
-//   color: black;
-//   padding: 1vw;
-// }
-
-// .post-name {
-//   font-size: 2.5vh;
-// }
-
-// .post-price {
-//   font-size: 1.5vh;
-//   display: flex;
-//   justify-content: space-between;
-// }
-
-
-// .star-btn {
-//   display: flex;
-//   align-items: center;
-// }
-
-// .star-icon {
-//   height: 2vh;
-//   width: 2vh;
-//   margin-right: 0.5vw;
-// }
-
-// .star-count {
-//   font-size: 2vh;
-// }
