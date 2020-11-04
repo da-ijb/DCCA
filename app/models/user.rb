@@ -6,6 +6,7 @@ class User < ApplicationRecord
          
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture      
+  has_many :posts
 
   with_options presence: true do       
     validates :nickname
@@ -24,4 +25,5 @@ class User < ApplicationRecord
     validates :prefecture_id
     end     
   end 
+
 end

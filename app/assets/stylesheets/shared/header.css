@@ -40,6 +40,12 @@
 .logout {
   text-decoration: none;
   color: #333333;
+  margin-right: 3vw;
+}
+
+.prelusion {
+  text-decoration: none;
+  color: #333333;
 }
 
 .login {
@@ -48,6 +54,7 @@
   margin-right: 3vw;
   color: #333333;
 }
+
 
 .sign-up {
   text-decoration: none;
