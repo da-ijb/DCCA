@@ -24,11 +24,13 @@
           <h3 class='post-name'>
           <%= post.name %>
           </h3>
+        <% end %>
+        <%= link_to user_path(post.user) do %>
           <div class='post-nickname'>
             <span>by<%= post.user.nickname %>さん<br></span>
           </div>
+        <% end %>  
         </div>
-        <% end %>
       </li>
       <% end %>
 </ul>
