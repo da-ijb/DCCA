@@ -13,6 +13,8 @@ class User < ApplicationRecord
   def already_liked?(post)
     self.likes.exists?(post_id: post.id)
   end
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
 
   with_options presence: true do       
     validates :nickname
