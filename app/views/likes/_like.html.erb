@@ -1,0 +1,10 @@
+<h3>いいね件数: <%= post.likes.count %></h3>
+<% if current_user.already_liked?(post) %>
+  <%= button_to '🖤', post_like_path(post), method: :delete, remote: true, id: :"like-button-#{post.id}" %>
+<% else %>
+  <%= button_to '♡', post_likes_path(post), remote: true, id: :"like-button-#{post.id}" %>
+<% end %>
+<h2>いいねしたユーザー</h2>
+<% @post.liked_users.each do |user| %>
+  <li><%= user.nickname %></li>
+<% end %>
