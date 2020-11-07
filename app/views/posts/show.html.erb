@@ -9,6 +9,10 @@
       <%= image_tag @post.image ,class:"item-box-img" %>
     </div>
 
+    <div id="like-btn-<%= @post.id %>">
+      <%= render 'likes/like', post: @post %>
+    </div>
+
     <% if user_signed_in? %>
       <% if current_user.id == @post.user_id %>
       <%= link_to '編集', edit_post_path(@post.id), method: :get, class: "post-blue-btn" %>
@@ -22,8 +26,7 @@
       <tbody>
         <tr>
           <th class="detail-post">紹介者</th>
-          <td class="detail-value"><%= @post.user.nickname %>さん</td>
-          <%# <%= link_to "by #{@post.user.name}", user_path(@post.user), class: :post__user %>
+          <td class="detail-value"><%= link_to "#{@post.user.nickname}さん", user_path(@post.user), class: :post__user %></td>
         </tr>
         <tr>
           <th class="detail-post">種別</th>
@@ -60,7 +63,7 @@
           <% @comments.each do |comment| %>
             <li class="comments_list">
                <%= comment.text %>
-               <%= link_to comment.user.nickname, user_path(comment.user), class: :comment_user %>
+               <%= link_to "by#{comment.user.nickname}", user_path(comment.user), class: :comment_user %>
             </li>
           <% end %>  
         </ul>

@@ -5,9 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   extend ActiveHash::Associations::ActiveRecordExtensions
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_many :comments
-  belongs_to_active_hash :prefecture      
+  belongs_to_active_hash :prefecture   
+  has_many :likes, dependent: :destroy
+  has_many :like_posts, through: :likes, source: :post   
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
 
   with_options presence: true do       
     validates :nickname
