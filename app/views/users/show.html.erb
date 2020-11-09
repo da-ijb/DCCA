@@ -6,6 +6,13 @@
       <h2 class="page-heading">
         <%= "#{@user.nickname}さんの情報"%>
       </h2>
+
+    <% if user_signed_in? %>
+      <% if current_user.id == @user.id %>
+      <%= link_to '編集', edit_user_registration_path(@user.id), method: :get, class: "user-blue-btn" %>
+      <% end %>
+    <% end %>
+
       <table class="table">
         <tbody>
           <tr>
@@ -22,6 +29,20 @@
           </tr>
         </tbody>
       </table>
+
+
+      <% unless @user.id == current_user.id %>
+        <% if @isRoom == true %>
+          <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">DMはこちら</a>
+        <% else %>
+          <%= form_for @room do |f| %>
+            <%= fields_for @entry do |e| %>
+              <%= e.hidden_field :user_id, value: @user.id %>
+            <% end %>
+            <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
+          <% end %>
+        <% end %>
+      <% end %>
 
       <h2 class="page-heading">
         <%= "#{@user.nickname}さんの紹介保護犬保護猫" %>
